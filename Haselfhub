@@ -1,0 +1,74 @@
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "KeySystem | Haselft", HidePremium = true, IntroText = "Haselft hub", IntroEnabled = true, SaveConfig = true, ConfigFolder = "Oriontest"})
+
+OrionLib:MakeNotification({
+	Name = "Your in!",
+	Content = "Your In key system",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+OrionLib:MakeNotification({
+	Name = "Key in discord",
+	Content = "https://discord.gg/xubH2gua",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+_G.Key = "Alexdepzai" -- You Put Your Key Here
+_G.KeyInput = "string"
+
+function MakeScriptHub()
+loadstring(game:HttpGet(("https://raw.githubusercontent.com/anel0982/Haself/main/Hshgshhs"))() -- You Put Your Script Here
+
+end
+
+
+function CorrectKeyNotifications()
+    OrionLib:MakeNotification({
+        Name = "Correct Key",
+        Content = "Welcome To The Key system :D",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+function WrongKeyNotifications()
+    OrionLib:MakeNotification({
+        Name = " Wrong Key",
+        Content = "Not key",
+        Image = "rbxassetid://4483345998",
+        Time = 5
+    })
+end
+
+local Tab = Window:MakeTab({
+	Name = "Key Room",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddTextbox({
+	Name = "Enter Key",
+	Default = "Enter Key",
+	TextDisappear = true,
+	Callback = function(Value)
+        _G.KeyInput = Value
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Check Key!",
+	Callback = function()
+        if _G.KeyInput == _G.Key then
+         MakeScriptHub()
+         CorrectKeyNotifications()
+     else
+        WrongKeyNotifications()
+        end
+  	end    
+})
+
